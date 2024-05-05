@@ -1,0 +1,42 @@
+.tab-product-menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las pestañas se envuelvan en pantallas más pequeñas */
+    justify-content: center;
+}
+
+.selected-tab {
+    border-bottom: 2px solid transparent;
+    margin-right: 20px;
+    margin-bottom: 10px; /* Añade un espacio entre las pestañas */
+    text-align: center; /* Centra el texto dentro de las pestañas */
+    flex: 1; /* Ocupa el ancho disponible */
+    max-width: 200px; /* Establece el ancho máximo de las pestañas */
+}
+
+.selected-tab:last-child {
+    margin-right: 0;
+}
+
+.selected-tab.active {
+    border-color: white;
+    filter: drop-shadow(0px 0px 10px #55c1c7);
+}
+
+.selected-tab button {
+    font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding-inline: 30px;
+}
+
+.selected-tab button:focus {
+    outline: none;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .selected-tab {
+        margin-right: 0; /* Elimina el margen derecho en pantallas más pequeñas */
+    }
+}
