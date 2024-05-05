@@ -1,0 +1,127 @@
+.background {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    z-index: 10;
+    padding: 0px;
+}
+
+.navbar link {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar link:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar link.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar link {
+        float: none;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+}
+
+.menu-mobile {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.mobile-container {
+    background: rgba(48, 47, 47, 0.363) ;
+    height: 100vh;
+    width: 40vh;
+    backdrop-filter: blur(6px);
+}
+
+.menu-mobile-container {
+    position: absolute;
+    top: 0;
+    left: -450%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.4s ease;
+}
+
+.menu-mobile-container.show-menu {
+    left: 0;
+}
+
+.menu-item-show {
+    opacity: 1;
+    transform: translateX(80px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-item-show.show-menu {
+    opacity: 0;
+    transform: translateX(-80px);
+}
+
+.menu-mobile a {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.menu-mobile a:hover {
+    background-color: rgba(2, 28, 32, 0.642);
+    color: white;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.App-header {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-footer {
+    background: #222831;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+@media (max-width: 767px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-text {
+    color: white;
+    filter: drop-shadow(0px 0px 10px #55c1c7);
+}
+
+.footer-icon {
+    color: white;
+    filter: drop-shadow(0px 0px 10px #55c1c7);
+}
