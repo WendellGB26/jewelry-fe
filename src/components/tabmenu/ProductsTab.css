@@ -7,7 +7,6 @@
 .selected-tab {
     border-bottom: 2px solid transparent;
     margin-right: 20px;
-    margin-bottom: 10px; /* Añade un espacio entre las pestañas */
     text-align: center; /* Centra el texto dentro de las pestañas */
     flex: 1; /* Ocupa el ancho disponible */
     max-width: 200px; /* Establece el ancho máximo de las pestañas */
