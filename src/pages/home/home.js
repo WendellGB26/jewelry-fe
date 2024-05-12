@@ -92,7 +92,7 @@ function Home() {
                     height="fit-content"
                   />
                   <Carousel.Caption className="caption">
-                    <h3 className='text-subtitle text-white font-bold'>Dama</h3>
+                    <a href="/products/caballero" className='text-subtitle text-white font-bold'>Dama</a>
                   </Carousel.Caption>
                 </Carousel.Item>
               )
@@ -120,7 +120,7 @@ function Home() {
                     height="fit-content"
                   />
                   <Carousel.Caption className="caption">
-                    <h3 className='text-subtitle text-white font-bold'>Caballero</h3>
+                    <a href="/products/caballero" className='text-subtitle text-white font-bold'>Caballero</a>
                   </Carousel.Caption>
                 </Carousel.Item>
               )
