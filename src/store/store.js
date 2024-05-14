@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import mapReducer from '../actions/TabAccesory/reducer';
+import mapReducer from '../reducer/Reducer';
 
 const store = createStore(
     mapReducer,
