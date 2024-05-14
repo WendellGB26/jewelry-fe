@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import './AppRouter.css';
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin, FaGoogle, FaEllipsisV } from 'react-icons/fa';
 import MenuIcon from '../components/menuIcon/menuIcon';
+import { FaCartArrowDown } from "react-icons/fa";
 
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
+import Car from '../pages/car/car';
 import Contacts from '../pages/contact/contacts';
 import Dama from '../pages/products/dama';
 import Caballero from '../pages/products/caballero';
@@ -31,14 +33,14 @@ function AppRouter() {
     <div className="background">
       <Router>
       <nav className="navbar">
-        <div className='flex w-2/4 justify-between items-start px-5 relative'>
+        <div className='flex flex-wrap w-full justify-between items-center px-5 relative'>
           <MenuIcon className='z-10' handleIconClick={handleMenu} />
           <div className={`menu-mobile-container ${menuOpen ? 'show-menu' : ''}`}>
             <div className="mobile-container flex flex-col pt-20 items-center pr-28 cursor-pointer">
               <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.2s' }} to="/">Home</Link>
               <div onClick={handleShowCategories} className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.4s' }}>Products</div>
               {showCategories && (
-                <div className="flex flex-col content-center">
+                <div className="flex flex-col items-start">
                   <Link className={`text-2xl text-white text-center py-3`} to="/products/dama">Dama</Link>
                   <Link className={`text-2xl text-white text-center py-3`} to="/products/caballero">Caballero</Link>
                 </div>
@@ -47,6 +49,7 @@ function AppRouter() {
               <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.8s' }} to="/contact">Contact us</Link>
             </div>
           </div>
+          <Link to="/car" style={{ color: '#76ABAE', fontSize: '2.2rem' }}><FaCartArrowDown/></Link>
         </div>
       </nav>
 
@@ -56,6 +59,7 @@ function AppRouter() {
           <Route path="/contact" component={Contacts} />
           <Route path="/products/dama" component={Dama} />
           <Route path="/products/caballero" component={Caballero} />
+          <Route path="/car" component={Car} />
         </main>
 
         <footer className='App-footer px-10 py-5 min-h-60'>

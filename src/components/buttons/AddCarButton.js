@@ -1,9 +1,14 @@
 import React from 'react';
 import "./addCarButton.css"
 
-const AddCarButton = ({ text }) => {
+const AddCarButton = ({ text, handleButtonClick }) => {
+  const handleClick = (e) => {
+    e.stopPropagation();
+    handleButtonClick(); 
+  };
+
   return (
-    <button className='animated-button'>
+    <button className='animated-button' onClick={handleClick}>
         <p>{text}</p>
         <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { setCar } from '../../actions/CarActions';
+import { useDispatch } from 'react-redux';
+import { FaCheck } from "react-icons/fa";
 import "./ProductList.css"
 import { Parallax } from "react-parallax";
 import ColorItem from "../colorItem/ColorItem";
 import AddCarButton from '../buttons/AddCarButton';
 
 const ProductList = ({ data }) => {
+    const [showPopup, setShowPopup] = useState(false); // Estado para controlar el popup
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) => {
+        dispatch(setCar(product)); // Llama a la acción addToCart
+        setShowPopup(true); // Muestra el popup
+        setTimeout(() => {
+            setShowPopup(false); // Oculta el popup después de un cierto tiempo
+        }, 2000); // 2000 ms = 2 segundos
+    };
+
     return (
         <div>
             {data === null ? (
@@ -37,7 +51,7 @@ const ProductList = ({ data }) => {
                                             <a className='color-text font-frank font-bold'>Price:</a>
                                             <a className='color-text font-frank px-4'>₡ {product.price}</a>
                                         </div>
-                                        <AddCarButton className="pl-10" text={'Add Car'}/>
+                                        <AddCarButton className="pl-10" text={'Add Car'} handleButtonClick={() => handleAddToCart(product)} />
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +59,8 @@ const ProductList = ({ data }) => {
                     </div>
                 </Parallax>
             ))
-            )}     
+            )} 
+            {showPopup && <div className="popup flex flex-row justify-center content-center"><FaCheck/><a className='text-lg px-2'>Artículo agregado al carrito</a></div>} 
         </div>
     );
 };
