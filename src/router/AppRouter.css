@@ -1,5 +1,5 @@
 .background {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(to bottom, #12100E,#2B4162,#12100E);
 }
 
 .navbar {
@@ -89,11 +89,10 @@
 }
 
 .App-header {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(to bottom, #12100E,#2B4162,#12100E);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
 }

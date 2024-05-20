@@ -1,5 +1,18 @@
 .content {
-    height: 100vh;
+    height: 80vh;
+}
+
+.hero-container {
+    height: 85vh;
+}
+
+.hero-image {
+    height: 400px;
+    width: 400px;
+}
+
+.slogan-container {
+    background: linear-gradient(90deg, #000000,#292929,#000000);
 }
 
 .video-container {

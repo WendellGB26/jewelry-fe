@@ -1,0 +1,17 @@
+.couponInput {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+.applyButton {
+    background-color: #76ABAE;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

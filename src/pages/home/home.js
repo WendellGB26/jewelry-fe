@@ -2,8 +2,10 @@ import React,{ useState, useEffect} from 'react';
 import { Parallax } from "react-parallax";
 import ReactPlayer from "react-player";
 import { Carousel } from 'react-bootstrap';
+import SloganComponent from '../../components/sloganComponent/SloganComponent';
+import { FaClock, FaChessQueen, FaHandSparkles, FaRegGem, FaRegGrinStars, FaStar } from 'react-icons/fa';
 
-
+import HeroImage from "../../assets/images/HeroImage.png"
 import hero from "../../assets/videos/Hero.mp4"
 import cadenaHombre from '../../assets/videos/Cadenas_Hombre.mp4'
 import relojHombre from '../../assets/videos/Reloj_Hombre.mp4'
@@ -21,35 +23,47 @@ function Home() {
   const videosMujer = [aretesMujer, cadenajMujer, relojMujer, anillossMujer];
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [scrollY, setScrollY] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear"
-  };
-  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
+      setWindowHeight(window.innerHeight);
     };
+
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const onLoadedData = () => {
     setIsVideoLoaded(true);
   };
+
+  const isCenterOfScreen = () => {
+    return scrollY > windowHeight / 1.6 && scrollY < windowHeight * 3; // Ajusta el factor de 1.5 según sea necesario
+  };
+
+
   return (
     <div>
-      <Parallax strength={300}>
-        <div className="content h-screen relative">
+      <Parallax strength={200}>
+        <div className="hero-container">
           <div className='video-container' style={{ opacity: isVideoLoaded ? 1 : 0 }}>
             <ReactPlayer
               url={hero}
@@ -73,7 +87,15 @@ function Home() {
         </div>
       </Parallax>
 
-      <Parallax strength={300}>
+      <Parallax strength={200}>
+        <SloganComponent
+          isMobile={isMobile}
+          scrollY={scrollY}
+          windowHeight={windowHeight}
+        />
+      </Parallax>
+
+      <Parallax strength={300} className='relative z-0'>
         <div className="content h-screen relative">
           <Carousel indicators={false} controls={false} interval={2000} pause={false}>
             {(isMobile ? videosMujer.slice(0, 1) : videosMujer).map((video, index) => {
@@ -101,7 +123,7 @@ function Home() {
         </div>
       </Parallax>
 
-      <Parallax strength={300}>
+      <Parallax strength={300} className='relative z-0'>
         <div className="content h-screen relative">
           <Carousel indicators={false} controls={false} interval={2000} pause={false}>
             {(isMobile ? videosHombre.slice(0, 1) : videosHombre).map((video, index) => {
