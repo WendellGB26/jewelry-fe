@@ -78,7 +78,7 @@ function Home() {
               height="fit-content"
             />
             <div className="text-overlay w-full">
-              <a className="text-title font-sans font-extrabold">
+              <a className="text-title font-poppins font-extrabold">
                 JEWELRY RAW STORE
               </a>
             </div>
@@ -114,7 +114,7 @@ function Home() {
                     height="fit-content"
                   />
                   <Carousel.Caption className="caption">
-                    <a href="/products/caballero" className='text-subtitle text-white font-bold'>Dama</a>
+                    <a href="/products/caballero" className='text-subtitle text-white font-bold font-poppins'>Dama</a>
                   </Carousel.Caption>
                 </Carousel.Item>
               )
@@ -142,7 +142,7 @@ function Home() {
                     height="fit-content"
                   />
                   <Carousel.Caption className="caption">
-                    <a href="/products/caballero" className='text-subtitle text-white font-bold'>Caballero</a>
+                    <a href="/products/caballero" className='text-subtitle text-white font-bold font-poppins'>Caballero</a>
                   </Carousel.Caption>
                 </Carousel.Item>
               )

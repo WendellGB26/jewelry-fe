@@ -9,6 +9,8 @@ module.exports = {
       }
     },
     fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      oswald: ['Oswald', 'sans-serif'],
       roboto: ['Roboto', 'sans-serif'],
       lato: ['Lato', 'sans-serif'],
       frank: ["'FrankNew'", 'sans-serif'],

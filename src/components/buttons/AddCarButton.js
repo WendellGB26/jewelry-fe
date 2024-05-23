@@ -9,7 +9,7 @@ const AddCarButton = ({ text, handleButtonClick }) => {
 
   return (
     <button className='animated-button' onClick={handleClick}>
-        <p>{text}</p>
+        <a className='font-poppins'>{text}</a>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"

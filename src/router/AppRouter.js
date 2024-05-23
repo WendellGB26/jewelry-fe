@@ -62,10 +62,15 @@ function AppRouter() {
           <Route path="/car" component={Car} />
         </main>
 
-        <footer className='App-footer px-10 py-5 min-h-60'>
-          <div className='footer-container items-center'>
-            <div className='flex flex-col justify-between items-center py-5'>
-              <a className='footer-text font-sans font-extrabold'>FOLLOW US</a>
+        <footer className='App-footer px-10 py-2 min-h-60'>
+          <div className='footer-container'>
+            <div className='flex flex-col justify-center items-center py-2'>
+              <div className='flex flex-col pb-4 items-center'>
+                  <a className="text-3xl text-white font-poppins font-extrabold">
+                    JEWELRY RAW STORE
+                  </a>
+              </div>
+              <a className='footer-text font-poppins font-extrabold'>FOLLOW US</a>
               <div className='flex space-x-4 mt-2'>
                 <FaInstagram className='footer-icon w-6 h-6'/>
                 <FaFacebook className='footer-icon w-6 h-6'/>
@@ -74,26 +79,30 @@ function AppRouter() {
                 <FaGoogle className='footer-icon w-6 h-6'/>
               </div>
             </div>
-            <div className='flex flex-col justify-between items-center py-5'>
-                <a className="text-2xl text-white font-sans font-extrabold">
-                  JEWELRY RAW STORE
-                </a>
-            </div>
             { !isMobile && (
-              <div className='flex flex-row justify-end py-5'>
+              <div className='flex flex-row justify-center py-5'>
                 <div className='flex flex-col justify-start px-5'>
-                  <a className='text-2xl footer-text px-2'>Products</a> 
-                  <a className='text-2xl text-white px-2'>Dama</a>
-                  <a className='text-2xl text-white px-2'>Caballero</a>         
+                  <a className='text-2xl font-poppins footer-text px-2 pb-2'>Dama</a> 
+                  <a className='text-2xl text-white font-oswald px-2'>relojs</a>
+                  <a className='text-2xl text-white font-oswald px-2'>cadenas</a>
+                  <a className='text-2xl text-white font-oswald px-2'>bracaletes</a> 
+                  <a className='text-2xl text-white font-oswald px-2'>anillos</a>     
+                  <a className='text-2xl text-white font-oswald px-2'>aretes</a>     
                 </div>
                 <div className='flex flex-col justify-start px-5'>
-                  <a className='text-2xl footer-text px-2'>Information</a> 
-                  <a className='text-2xl text-white px-2'>wendell.sofdev@gmail.com</a>
-                  <a className='text-2xl text-white px-2'>reichel.moya@gmail.com</a>
-                  <a className='text-2xl text-white px-2'>+506 8888-8888</a>             
+                  <a className='text-2xl font-poppins footer-text px-2 pb-2'>Caballero</a> 
+                  <a className='text-2xl text-white font-oswald px-2'>relojs</a>
+                  <a className='text-2xl text-white font-oswald px-2'>cadenas</a>
+                  <a className='text-2xl text-white font-oswald px-2'>bracaletes</a>
+                  <a className='text-2xl text-white font-oswald px-2'>anillos</a>             
                 </div>
               </div>
+              
             )}
+            <div className='flex flex-col justify-start px-5 py-5'>
+              <a className='text-2xl footer-text font-poppins px-2 pb-2'>About Us</a> 
+              <a className='text-base text-white font-oswald px-2'>En RAW, creemos que las joyas son más que un accesorio: son una expresión de quién eres. Fundada en 2024, nuestra misión es ofrecer piezas exquisitas y hechas a mano que capturen la esencia de la elegancia y la belleza atemporal.</a>     
+            </div>
           </div>
         </footer>
 

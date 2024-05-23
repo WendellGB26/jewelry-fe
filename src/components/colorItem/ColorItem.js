@@ -10,7 +10,7 @@ const ColorItem = ({ color }) => {
 
     return (
         <div className='py-2'>
-            <a className='color-text font-serif font-bold'>Colors:</a>
+            <a className='color-text font-poppins font-bold'>Colors:</a>
             <div style={circleStyle}></div>
         </div>
     );

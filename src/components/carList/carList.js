@@ -9,10 +9,10 @@ const CarList = ({ products }) => {
                 <table className="w-full">
                     <tbody>
                         {products.map((item) => (
-                            <tr key={item.id} className='border-b'>
+                            <tr key={item.id} className='border-b border-black'>
                                 <td className="flex justify-center w-20 h-auto"><img src={item.imageUrl} alt={item.name} /></td>
-                                <td className="text-center">{item.name}</td>
-                                <td className="text-center">₡ {item.price}</td>
+                                <td className="text-center text-black">{item.name}</td>
+                                <td className="text-center text-black">₡ {item.price}</td>
                                 <td><FaTimes style={{ color: "red" }} /></td>
                             </tr>
                         ))}

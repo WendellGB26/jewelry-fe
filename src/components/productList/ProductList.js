@@ -29,6 +29,8 @@ const ProductList = ({ data }) => {
             const rect = el.getBoundingClientRect();
             if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
               el.classList.add('slide-in-visible');
+            } else {
+              el.classList.remove('slide-in-visible');
             }
           }
         });
@@ -39,6 +41,7 @@ const ProductList = ({ data }) => {
   
       return () => {
         window.removeEventListener('scroll', handleScroll);
+        
       };
     }, [data]);
 
@@ -65,17 +68,17 @@ const ProductList = ({ data }) => {
                                 className="flex w-full md:w-2/4 mb-5 md:mb-0 md:pr-20 justify-center content-center slide-in"
                                 ref={(el) => (elementsRef.current[index] = el)}
                             >
-                                <img src={product.imageUrl} alt={product.name} className="w-3/5" />
+                                <img src={product.imageUrl} alt={product.name} className="w-3/5"/>
                             </div>
                             <div className="md:w-2/5 pl-10">
                                 <div className='flex flex-col max-w-2xl justify-start items-start'>
-                                    <a className='name-text font-frank font-bold py-2 text-start max-w-2xl'>{product.name}</a>
-                                    <a className='desc-text font-frank font-bold py-2 text-start max-w-2xl'>{product.description}</a>
+                                    <a className='name-text font-bold font-poppins py-2 text-start max-w-2xl'>{product.name}</a>
+                                    <a className='desc-text font-bold font-oswald py-2 text-start max-w-2xl'>{product.description}</a>
                                     <ColorItem color={'red'}/>
                                     <div className='w-full flex flex-col md:flex-row py-2 items-center justify-between'>
                                         <div className='flex md:w-auto w-full'>
-                                            <a className='color-text font-frank font-bold'>Price:</a>
-                                            <a className='color-text font-frank px-4'>₡ {product.price}</a>
+                                            <a className='color-text font-poppins font-bold'>Price:</a>
+                                            <a className='color-text font-oswald px-4'>₡ {product.price}</a>
                                         </div>
                                         <AddCarButton className="pl-auto" text={'Add Car'} handleButtonClick={() => handleAddToCart(product)} />
                                     </div>

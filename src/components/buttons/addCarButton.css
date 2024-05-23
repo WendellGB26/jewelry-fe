@@ -17,7 +17,7 @@
     align-items: center;
   }
   
-  .animated-button p {
+  .animated-button a {
     margin: 0;
     position: relative;
     font-size: 20px;
@@ -35,7 +35,7 @@
     transition: 0.3s ease-out;
   }
   
-  .animated-button p::before {
+  .animated-button a::before {
     position: absolute;
     /*   box-sizing: border-box; */
     content: "Add Car";
@@ -50,7 +50,7 @@
     width: 100%;
   }
   
-  .animated-button:hover p::before {
+  .animated-button:hover a::before {
     width: 100%;
   }
   

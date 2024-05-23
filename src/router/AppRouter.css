@@ -98,13 +98,27 @@
 }
 
 .App-footer {
-    background: #222831;
+    position: relative; /* Asegura que el pseudoelemento esté posicionado correctamente */
+    background: url('../assets/images/footer.jpg');
     background-size: cover;
     background-position: center;
+    z-index: 1; /* Coloca el contenido del footer por encima del pseudoelemento */
+}
+
+.App-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.78); /* Ajusta los valores RGBA para cambiar el color y la opacidad */
+    z-index: -1; /* Coloca el pseudoelemento por detrás del contenido del footer */
 }
 
 .footer-container {
     display: grid;
+    opacity: 1;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
 }
