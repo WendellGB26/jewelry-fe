@@ -31,7 +31,7 @@ const bill = ({ products }) => {
 
         <div className="flex flex-col">
             <button className={`${styles.btn}`}>Proceed to checkout</button>
-            <button className="flex flex-wrap justify-center"><FaArrowLeft className="text-black pr-2 self-center"/><a className="text-black" href="/products/caballero">Continue Shopping</a></button>            
+            <button className="flex flex-wrap justify-center"><FaArrowLeft className="text-black pr-2 self-center text-base"/><a className="text-black text-base" href="/products/caballero">Continue Shopping</a></button>            
         </div>
         
 

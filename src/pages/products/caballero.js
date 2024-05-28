@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
-import { useSelector } from 'react-redux';
-import ProductsTab from "../../components/tabmenu/ProductsTab";
+import { useLocation, useParams } from 'wouter';
+
 import { getClocks } from '../../api/services/clockService';
 import { getNecklaces } from '../../api/services/necklaceService';
 import { getBracelets } from '../../api/services/bracaletService';
 import { getRings } from '../../api/services/ringService';
 import { getEarringss } from '../../api/services/earringService';
 
+import ProductsTab from "../../components/tabmenu/ProductsTab";
 import ProductList from "../../components/productList/ProductList"
 
 const tabOptions = [
@@ -38,48 +39,55 @@ const tabOptions = [
 ]
 
 function Caballero() {
-  const [products, setProducts] = useState(null);
+  const [, navigate] = useLocation();
+  const [products, setProducts] = useState([]);
+  const { genero } = useParams();
 
   const handleTabChange = async (tabValue) => {
     let productsData;
-    if (tabValue === 'clocks') {
-      productsData = await getClocks();
-    } else if (tabValue === 'necklaces') {
-      productsData = await getNecklaces();
-    } else if (tabValue === 'bracelets') {
-      productsData = await getBracelets();
-    } else if (tabValue === 'rings') {
-      productsData = await getRings();
-    } else if (tabValue === 'earrings') {
-      productsData = await getEarringss();
-    } else {
-      console.error('TabValue no reconocido:', tabValue);
-      return;
+    switch (tabValue) {
+      case 'clocks':
+        productsData = await getClocks(genero);
+        break;
+      case 'necklaces':
+        productsData = await getNecklaces(genero);
+        break;
+      case 'bracelets':
+        productsData = await getBracelets(genero);
+        break;
+      case 'rings':
+        productsData = await getRings(genero);
+        break;
+      case 'earrings':
+        productsData = await getEarringss(genero);
+        break;
+      default:
+        console.error('TabValue no reconocido:', tabValue);
+        return;
     }
-  
+
+    navigate(`/products/${genero}/${tabValue}`);
     setProducts(productsData);
   };
 
   useEffect(() => {
-    const fetchCLocks = async () => {
+    const fetchClocks = async () => {
       try {
-        const clocksData = await getClocks();
+        const clocksData = await getClocks(genero);
+        console.log('data', clocksData)
         setProducts(clocksData);
       } catch (error) {
-        // Manejar errores
+        console.error('Error Fetching products', error);
       }
     };
 
-    fetchCLocks();
-  }, []);
+    fetchClocks();
+  }, [genero]);
 
   return (
     <div>
-      <ProductsTab 
-          options={JSON.stringify(tabOptions)} 
-          onTabChange={handleTabChange}
-      />
-      <ProductList data={products}/>
+      <ProductsTab options={JSON.stringify(tabOptions)} onTabChange={handleTabChange} />
+      <ProductList data={products} />
     </div>
   );
 }
