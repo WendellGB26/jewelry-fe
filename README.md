@@ -45,3 +45,4 @@ Bienvenido al repositorio de **Jewelry RAW Store**, una tienda en línea de joye
 Mira el siguiente video para una demostración de la tienda de joyería:
 
 [Jewelry RAW Store](https://drive.google.com/file/d/1UnldBYwL0TPcIyaS_QuPZZYJC7M7j2ND/view?usp=sharing)
+[Jewelry RAW Store Responsive](https://drive.google.com/file/d/1apBxu-zIqVUU9VpBVPSkCNDdEgGsLqyp/view?usp=sharing)
