@@ -8,10 +8,7 @@ Bienvenido al repositorio de **Jewelry RAW Store**, una tienda en línea de joye
 - [Características](#características)
 - [Tecnologías](#tecnologías)
 - [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
+- [Video Demostrativo](#video)
 
 ## Descripción
 
@@ -40,7 +37,7 @@ Bienvenido al repositorio de **Jewelry RAW Store**, una tienda en línea de joye
 - [Wouter](https://github.com/molefrog/wouter) (para la navegación)
 
 
-## Video Demostrativo
+## Video
 
 Mira el siguiente video para una demostración de la tienda de joyería:
 
