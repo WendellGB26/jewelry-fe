@@ -1,7 +1,9 @@
 {
     "primary": "#cd5322",
     "darkBlue": "#022328",
-    "accent": "#FFD700",
-    "textActive": "#d7a60e",
+    "accent": "rgb(137, 30, 47)",
+    "textActive": "rgb(137, 30, 47)",
+    "textProduct": "#FFFFE0",
+    "cardColor": "rgb(55, 12, 20)",
     "background": "#2f3c42"
 }

@@ -1,0 +1,13 @@
+.product-container {
+    width: 80%;
+}
+
+.filter-container {
+    width: 20%;
+    background: linear-gradient(45deg, #0399df, rgb(0, 0, 52));
+    border-radius: 10px;
+}
+
+.filter-text {
+    color: white;
+}

@@ -1,24 +1,28 @@
 import {  Route, Link, Router, Switch } from 'wouter';
-import React, { useState, useEffect } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import './AppRouter.css';
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin, FaGoogle, FaUserAlt } from 'react-icons/fa';
-import MenuIcon from '../components/menuIcon/menuIcon';
+import MenuIcon from '../components/shared/menuIcon/menuIcon';
 import { FaCartArrowDown } from "react-icons/fa";
-import LoginModal from '../components/login/login';
+import LoginModal from '../components/feature/auth/login/login';
 import { useSelector } from 'react-redux';
 
-import Home from '../pages/home/home';
-import About from '../pages/about/about';
-import Car from '../pages/car/car';
-import Contacts from '../pages/contact/contacts';
-import Dama from '../pages/products/dama';
-import Caballero from '../pages/products/caballero';
+import Home from '../components/layout/home/home';
+import About from '../components/layout/about/about';
+import Car from '../components/layout/car/car';
+import Contacts from '../components/layout/contact/contacts';
+import Caballero from '../components/layout/products/caballero';
+
+const MemoizedHome = memo(Home);
+const MemoizedAbout = memo(About);
+const MemoizedCar = memo(Car);
+const MemoizedContacts = memo(Contacts);
+const MemoizedCaballero = memo(Caballero);
 
 function AppRouter() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showCategories, setShowCategories] = useState(false);
-  const [genero, setGenero] = useState('false');
   const [showLogin, setShowLogin] = useState(false);
   const [isadmin, setisAdmin] = useState(false);
   const userState = useSelector((state) => state.user);
@@ -52,40 +56,42 @@ function AppRouter() {
             <MenuIcon className='z-10' handleIconClick={handleMenu} />
             <div className={`menu-mobile-container ${menuOpen ? 'show-menu' : ''}`}>
               <div className="mobile-container flex flex-col pt-20 items-center pr-28 cursor-pointer">
-                <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.2s' }} to="/">Home</Link>
-                <div onClick={handleShowCategories} className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.4s' }}>Products</div>
-                {showCategories && (
-                  <div className="flex flex-col items-start">
-                    <Link className={`text-2xl text-white py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.6s' }} to="/products/dama/clocks">Dama</Link>
-                    <Link className={`text-2xl text-white py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.6s' }} to="/products/caballero/clocks">Caballero</Link>
-                  </div>
-                )}
-                <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.6s' }} to="/about">About</Link>
-                <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.8s' }} to="/contact">Contact us</Link>
-                { isadmin && (
-                  <div className='flex flex-col items-start'>
-                    <Link className={`text-2xl text-white text-start py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.6s' }} to="/products/admin/add">Crear Producto</Link>
-                    <Link className={`text-2xl text-white text-start py-3 ${menuOpen ? 'menu-item-show' : ''}`} style={{ transitionDelay: '0.6s' }} to="/products/admin/list">Inventario</Link>                    
-                  </div>
-                )}
+                <div className={`flex flex-col slide-in ${menuOpen && ('slide-in-visible')}`}>
+                  <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : 'menu-item'}`} style={{ transitionDelay: '0.2s' }} to="/">Home</Link>
+                  <a onClick={handleShowCategories} className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : 'menu-item'} `} style={{ transitionDelay: '0.6s' }}>Products</a>
+                  {showCategories && (
+                    <div className={`flex flex-col items-end ${showCategories ? 'menu-item-show' : 'menu-item'}`}>
+                      <Link className={`text-2xl text-center text-textActive py-3`} style={{ transitionDelay: '0.2s' }} to="/products/dama/clocks">Dama</Link>
+                      <Link className={`text-2xl text-center text-textActive py-3`} style={{ transitionDelay: '0.6s' }} to="/products/caballero/clocks">Caballero</Link>
+                    </div>
+                  )}
+                  <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : 'menu-item'}`} style={{ transitionDelay: '1s' }} to="/about">About</Link>
+                  <Link className={`text-2xl text-white text-center py-3 ${menuOpen ? 'menu-item-show' : 'menu-item'}`} style={{ transitionDelay: '1.4s' }} to="/contact">Contact us</Link>
+                  { isadmin && (
+                    <div className='flex flex-col items-start'>
+                      <Link className={`text-2xl text-white text-start py-3 ${menuOpen ? 'menu-item-show' : 'menu-item'}`} style={{ transitionDelay: '1.7s' }} to="/products/admin/add">Crear Producto</Link>
+                      <Link className={`text-2xl text-white text-start py-3 ${menuOpen ? 'menu-item-show' : 'menu-item'}`} style={{ transitionDelay: '2s' }} to="/products/admin/list">Inventario</Link>                    
+                    </div>
+                  )}                  
+                </div>
               </div>
             </div>
             <div className='flex flex-row items-center'>
               { !userState && (
-                <a onClick={handleLoginClick} className="text-2xl mr-6 cursor-pointer" style={{ color: '#76ABAE' }}><FaUserAlt/></a> 
+                <a onClick={handleLoginClick} className="text-2xl mr-6 cursor-pointer" style={{ color: 'rgb(137, 30, 47)' }}><FaUserAlt/></a> 
               )}
-              <Link to="/car" style={{ color: '#76ABAE', fontSize: '2.2rem' }}><FaCartArrowDown/></Link>
+              <Link to="/car" style={{ color: 'rgb(137, 30, 47)', fontSize: '2.2rem' }}><FaCartArrowDown/></Link>
             </div>
           </div>
         </nav>
 
         <main className="App-header">
           <Switch>
-            <Route path="/" component={() => <Home/>} />
-            <Route path="/about" component={() => <About/>} />
-            <Route path="/contact" component={() => <Contacts/>} />
-            <Route path="/products/:genero/:tab" component={Caballero} />
-            <Route path="/car" component={() => <Car/>} />            
+            <Route path="/" component={MemoizedHome} />
+            <Route path="/about" component={MemoizedAbout} />
+            <Route path="/contact" component={MemoizedContacts} />
+            <Route path="/products/:genero/:tab" component={MemoizedCaballero} />
+            <Route path="/car" component={MemoizedCar} />            
           </Switch>
         </main>
 

@@ -1,0 +1,24 @@
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Cambiar a space-between para distribuir inputs */
+    gap: 0.5em;
+    padding: 0.3em; /* Añadir padding para espacio interno */
+    margin-bottom: 0.6em; /* Añadir margin para espacio entre campos */
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: rgb(55, 12, 20);
+    background-color: #FFFFE0;
+    box-shadow: inset 2px 5px 10px #FFFFE0;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: rgb(55, 12, 20);
+    padding: 0.5em; /* Añadir padding para espacio interno */
+}

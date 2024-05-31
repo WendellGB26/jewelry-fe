@@ -44,10 +44,9 @@
 }
 
 .mobile-container {
-    background: rgba(48, 47, 47, 0.363) ;
+    background: rgba(38, 8, 14, 0.793) ;
     height: 100vh;
     width: 40vh;
-    backdrop-filter: blur(6px);
 }
 
 .menu-mobile-container {
@@ -63,15 +62,14 @@
     left: 0;
 }
 
+.menu-item{
+    left: 80px;
+}
+
 .menu-item-show {
     opacity: 1;
     transform: translateX(80px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.menu-item-show.show-menu {
-    opacity: 0;
-    transform: translateX(-80px);
 }
 
 .menu-mobile a {
@@ -89,7 +87,7 @@
 }
 
 .App-header {
-    background: linear-gradient(to bottom, #12100E,#2B4162,#12100E);
+    background: linear-gradient(to bottom,  rgb(6, 2, 2), rgb(55, 12, 20), rgb(137, 30, 47), rgb(55, 12, 20), rgb(6, 2, 2));
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -131,10 +129,10 @@
 
 .footer-text {
     color: white;
-    filter: drop-shadow(0px 0px 10px #55c1c7);
+    filter: drop-shadow(0px 0px 10px rgb(137, 30, 47));
 }
 
 .footer-icon {
     color: white;
-    filter: drop-shadow(0px 0px 10px #55c1c7);
+    filter: drop-shadow(0px 0px 10px rgb(137, 30, 47));
 }
