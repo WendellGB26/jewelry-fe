@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Jewelry RAW Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido al repositorio de **Jewelry RAW Store**, una tienda en línea de joyería. Este proyecto consta de un backend desarrollado en **Node.js** con **NestJS** y un frontend en **React.js**.
 
-## Available Scripts
+## Índice
 
-In the project directory, you can run:
+- [Descripción](#descripción)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
 
-### `npm start`
+## Descripción
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Jewelry RAW Store** es una tienda en línea especializada en la venta de joyería fina. Este proyecto incluye una API RESTful para la gestión de productos, usuarios y pedidos, y una interfaz de usuario moderna e intuitiva para que los clientes puedan explorar y comprar nuestros productos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Características
 
-### `npm test`
+- **Gestión de productos**: Crear, leer, actualizar y eliminar productos de joyería.
+- **Autenticación de usuarios**: Registro e inicio de sesión de usuarios.
+- **Carrito de compras**: Añadir productos al carrito y proceder al pago.
+- **Pedidos**: Gestión de pedidos y seguimiento de los mismos.
+- **Interfaz amigable**: Diseño moderno y responsivo para una excelente experiencia de usuario.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/)
+- [NestJS](https://nestjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React.js](https://reactjs.org/)
+- [Redux](https://redux.js.org/) (para la gestión del estado)
+- [Wouter](https://github.com/molefrog/wouter) (para la navegación)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Video Demostrativo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Mira el siguiente video para una demostración de la tienda de joyería:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Jewelry RAW Store](https://drive.google.com/file/d/1UnldBYwL0TPcIyaS_QuPZZYJC7M7j2ND/view?usp=sharing)
